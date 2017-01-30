@@ -22,8 +22,11 @@ import javax.swing.JPanel;
 public class Windows extends JFrame {
     
     JPanel container = new JPanel();
-    JComboBox combo = new JComboBox();
-    JLabel label = new JLabel("Le jeux:");
+    JComboBox comboJeux = new JComboBox();
+    JLabel jeux = new JLabel("Le jeux:");
+    
+    JComboBox comboZone = new JComboBox();
+    JLabel zone = new JLabel("Zones:");
          
     public Windows(){
         
@@ -32,20 +35,44 @@ public class Windows extends JFrame {
         setTitle("Encounter slot");//titre de la fenetre
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);//quand on clique sur la croix sa ferme
         
-        //mise en place combobox
+        //mise en place combobox jeux
         
-            combo.setPreferredSize(new Dimension(100, 20));
-            combo.addItem("Option 1");
-            combo.addItem("Option 2");
-            combo.addItem("Option 3");
-            combo.addItem("Option 4");
+            comboJeux.setPreferredSize(new Dimension(100, 20));
+            comboJeux.addItem("Option 1");
+            comboJeux.addItem("Option 2");
+            comboJeux.addItem("Option 3");
+            comboJeux.addItem("Option 4");
             
             JPanel top = new JPanel();
-            top.add(label);
-            top.add(combo);
+            top.add(jeux);
+            top.add(comboJeux);
             
-            container.add(top, BorderLayout.NORTH);
-            this.setContentPane(container);
+            top.setBounds(450,100,100,70);
+            container.setLayout(null);
+            container.add(top);
+     
+            
+         
+            
+            
+            
+            
+            
+        // Combo zone
+        
+            comboZone.setPreferredSize(new Dimension(100,20));
+            comboZone.addItem("zone");
+            
+            JPanel bot = new JPanel();
+            bot.add(zone);
+            bot.add(comboZone);
+            
+            bot.setBounds(450,200,100,70);
+            container.setLayout(null);
+            container.add(bot);
+            
+            
+        this.setContentPane(container);
         
         setSize(1000, 800);//taille
         setVisible(true);//permet l'affichage
